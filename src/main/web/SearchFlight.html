@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="colorlib.com">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900|Poppins:700" rel="stylesheet" />
+	<link href="css/search.css" rel="stylesheet" />
+	<title>Flight Planner</title>
+</head>
+<body>
+<div class="s011">
+	<form>
+		<fieldset>
+			<legend>Search Flights</legend>
+		</fieldset>
+		<div class="inner-form">
+			<div class="main-form" id="main-form">
+				<div class="row">
+					<div class="input-wrap">
+						<div class="icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+							</svg>
+						</div>
+						<div class="input-field">
+							<label>LEAVING FROM
+								<input type="text" placeholder="Departure, Airport Name" id="departure" name="departure"/>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-wrap">
+						<div class="icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+							</svg>
+						</div>
+						<div class="input-field">
+							<label>GOING TO
+								<input type="text" placeholder="Destination, Airport Name" id="destination"/>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-wrap">
+						<div class="icon-wrap">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+								<path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"></path>
+							</svg>
+						</div>
+						<div class="input-field">
+							<label>DEPARTURE DATE
+								<input class="datepicker" type="text" placeholder="mm/dd/yy" id="date"/>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row last">
+					<button class="btn-search" type="button" onclick="searchForFlights(document.
+					getElementById('departure').value, document.getElementById('destination').value,
+					document.getElementById('date').value)">Search</button>
+				</div>
+				<div class="row last">
+					<button class="btn-search" type="button" onClick="viewProfile()">View Profile</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+<script src="js/SearchFlight.js"></script>
+<script src="js/choices.js"></script>
+<script>
+	const choices = new Choices('[data-trigger]',
+			{
+				searchEnabled: false,
+				itemSelectText: '',
+			});
+
+</script>
+<script src="js/flatpickr.js"></script>
+<script>
+	flatpickr(".datepicker",
+			{
+				dateFormat: "m/d/y"
+			});
+	let btnTypes = document.querySelectorAll('.travel-type-wrap .item');
+	let mainForm = document.getElementById('main-form')
+	for (let i = 0; i < btnTypes.length; i++)
+	{
+		btnTypes[i].addEventListener('click', function()
+		{
+			for (let i = 0; i < btnTypes.length; i++)
+			{
+				btnTypes[i].classList.remove('active')
+			}
+			btnTypes[i].classList.add('active')
+			let className = 'type' + i
+			mainForm.className = `${className} main-form`
+		})
+	}
+
+</script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

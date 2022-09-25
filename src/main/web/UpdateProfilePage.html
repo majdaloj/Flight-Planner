@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kamamans Profile Update</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="css/nunito-font.css">
+	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<div class="page-content">
+		<div class="wizard-v5-content">
+			<div class="wizard-form">
+		        <form class="form-register" id="form-register" action="#" method="post">
+		        	<div id="form-total">
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+			            	<span class="step-text">User Information</span>
+			            </h2>
+			            <section id="section-1">
+			                <div class="inner" id="personal-information"></div>
+							<div style="padding-top: 10px;">
+								<button style="background-color: white; font-family: Arial,serif; font-size: 24px;" type="button" onclick="viewPastRoutes()">View Past Routes</button>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+			            	<span class="step-text">Settings</span>
+			            </h2>
+			            <section>
+			                <div class="inner" id="settings"></div>
+			            </section>
+			            <!-- SECTION 3 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-check"></i></span>
+			            	<span class="step-text">Confirm Details</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+			                	<h3>Confirm Details</h3>
+								<div class="form-row table-responsive">
+									<table class="table">
+										<tbody id="confirm-table">
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div style="padding-top: 10px; padding-left: 45px;">
+								<button style="background-color: white; font-family: Arial,serif; font-size: 24px;" type="button" onclick="saveAndClose()">Save and Close</button>
+							</div>
+			            </section>
+		        	</div>
+		        </form>
+			</div>
+		</div>
+	</div>
+	<script src="js/UpdateProfile.js"></script>
+	<script src="js/UpdateProfile_generalfunctions.js"></script>
+	<script src="js/UpdateProfile_mainfunctions.js"></script>
+</body>
+</html>
